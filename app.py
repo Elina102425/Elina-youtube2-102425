@@ -76,7 +76,7 @@ with st.sidebar:
         return "🟢" if os.getenv(key) else "🔴"
     
     st.caption(f"{status_badge('YOUTUBE_API_KEY')} YouTube API")
-    st.caption(f"{status_badge('GOOGLE_API_KEY')} Gemini API")
+    st.caption(f"{status_badge('GEMINI_API_KEY')} Gemini API")
     st.caption(f"{status_badge('OPENAI_API_KEY')} OpenAI API")
     st.caption(f"{status_badge('GOOGLE_SERVICE_ACCOUNT_JSON')} Google Auth")
     
