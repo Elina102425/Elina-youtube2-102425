@@ -1,0 +1,53 @@
+# AI Research Agent Studio - Agent Configuration
+# Version: 2.0
+
+agents:
+  youtube_summarizer:
+    description: "Summarize YouTube videos with precision and factual accuracy"
+    provider: gemini  # gemini, openai
+    models:
+      gemini:
+        default: gemini-2.5-flash
+        fast: gemini-2.5-flash-lite
+      openai:
+        default: gpt-4o-mini
+        fast: gpt-5-nano
+        fallback: gpt-4.1-mini
+    parameters:
+      temperature: 0.3
+      max_tokens: 1200
+      top_p: 0.95
+    system_prompt: |
+      You are a precise research assistant specialized in video content analysis.
+      Your task: Create accurate, factual 200-word summaries of YouTube videos.
+      
+      Guidelines:
+      - Prioritize transcript content when available
+      - Extract key facts, names, statistics, and main arguments
+      - Maintain neutral, objective tone
+      - No speculation or hallucinations
+      - Target 180-220 words exactly
+      - Focus on actionable insights and takeaways
+
+  content_generator:
+    description: "Generate creative, engaging content for various formats"
+    provider: gemini
+    models:
+      gemini:
+        default: gemini-2.5-flash
+        fast: gemini-2.5-flash-lite
+      openai:
+        default: gpt-4o-mini
+        fast: gpt-5-nano
+    parameters:
+      temperature: 0.7
+      max_tokens: 2000
+      top_p: 0.9
+    system_prompt: |
+      You are a creative content writer with expertise in multiple formats.
+      Generate engaging, well-structured content that resonates with audiences.
+      
+      Principles:
+      - Match tone to context and audience
+      - Use clear, compelling language
+      - Include specific examples and details
